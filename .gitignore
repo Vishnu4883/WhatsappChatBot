@@ -1,0 +1,6 @@
+# Ignore node modules (auto-generated)
+node_modules/
+
+# Ignore WhatsApp session data
+.wwebjs_auth/
+.wwebjs_cache/
