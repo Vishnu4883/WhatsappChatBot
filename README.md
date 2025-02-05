@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Activates on start command.
 Deactivates on stop or bye.
 
@@ -84,3 +85,12 @@ git commit -m "Added new features"
 git push
 
 Let me know if you need further clarification! 😊
+=======
+# WhatsApp ChatBot 🤖
+
+A WhatsApp chatbot built with Node.js and `whatsapp-web.js`.
+
+## Features
+- Activates on `start` command.
+- Deactivates on `stop` or `bye`.
+>>>>>>> 83fec29e57dde32ab8bf484a12348184b8c18a93
