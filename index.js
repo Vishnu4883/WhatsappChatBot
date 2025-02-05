@@ -24,7 +24,8 @@ client.on('message', async (message) => {
   const userID = message.from;
   const userMessage = message.body.toLowerCase().trim();
 
-  if (message.fromMe || message.isGroupMsg) return;
+  // Allow bot to respond in both individual and group chats
+  if (message.fromMe) return;
 
   if (userMessage === 'start') {
     activeUsers[userID] = true;
@@ -42,10 +43,38 @@ client.on('message', async (message) => {
 
   switch(userMessage) {
     case 'menu':
-      await message.reply(`📄 Services:\n- Order Tracking\n- Support\n- FAQ`);
+      await message.reply(
+        `📄 Services:\n` +
+        `1. Live Cricket Score\n` +
+        `2. తెలుగు వార్తలు\n` +
+        `3. YouTube\n` +
+        `4. Telugu New Movies`
+      );
+      break;
+    case '1':
+      await message.reply('Live Cricket Score: https://www.cricbuzz.com/');
+      break;
+    case '2':
+      await message.reply('తెలుగు వార్తలు: https://www.eenadu.net/');
+      break;
+    case '3':
+      await message.reply('YouTube: https://www.youtube.com/');
+      break;
+    case '4':
+      await message.reply(
+        `Telugu New Movies:\n` +
+        `a. Moviezwap\n` +
+        `b. Movierulz`
+      );
+      break;
+    case 'a':
+      await message.reply('Moviezwap: https://www.moviezwap.fyi/');
+      break;
+    case 'b':
+      await message.reply('Movierulz: https://www.5movierulz.vu/');
       break;
     case 'help':
-      await message.reply('📧 Contact: support@example.com');
+      await message.reply('📧 Contact: maraganivishnu2001@gmail.com');
       break;
     default:
       await message.reply(`ℹ️ Commands: *Menu*, *Help*, *Stop*`);
